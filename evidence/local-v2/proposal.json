@@ -1,0 +1,111 @@
+{
+  "fictional": true,
+  "policy_id": "CIRCE-DEMO-01",
+  "policy_version": "2.0",
+  "currency": "EUR",
+  "review_threshold": "1000.00",
+  "total_proposed": "2216.00",
+  "proposed_lines": 3,
+  "special_review_lines": 1,
+  "issue_lines": 3,
+  "lines": [
+    {
+      "item_no": "A100",
+      "description": "Kit de mantenimiento",
+      "location": "SEV",
+      "supplier": "PROV-01",
+      "row": 2,
+      "status": "REVISION_NORMAL",
+      "need_qty": 18,
+      "order_qty": 20,
+      "amount": "500.00",
+      "reason": "Propuesta pendiente de decisión humana"
+    },
+    {
+      "item_no": "B200",
+      "description": "Sensor de temperatura",
+      "location": "SEV",
+      "supplier": "PROV-02",
+      "row": 3,
+      "status": "REVISION_NORMAL",
+      "need_qty": 32,
+      "order_qty": 36,
+      "amount": "666.00",
+      "reason": "Propuesta pendiente de decisión humana"
+    },
+    {
+      "item_no": "C300",
+      "description": "Cable industrial",
+      "location": "SEV",
+      "supplier": "PROV-01",
+      "row": 4,
+      "status": "SIN_COMPRA",
+      "need_qty": 0,
+      "order_qty": 0,
+      "amount": "0.00",
+      "reason": "Disponible y entradas cubren demanda y objetivo"
+    },
+    {
+      "item_no": "D400",
+      "description": "Bomba de recambio",
+      "location": "SEV",
+      "supplier": "PROV-03",
+      "row": 5,
+      "status": "REVISION_ESPECIAL",
+      "need_qty": 23,
+      "order_qty": 25,
+      "amount": "1050.00",
+      "reason": "Propuesta pendiente de decisión humana"
+    },
+    {
+      "item_no": "E500",
+      "description": "Junta de sellado",
+      "location": "SEV",
+      "supplier": "",
+      "row": 6,
+      "status": "INCIDENCIA",
+      "need_qty": 10,
+      "order_qty": 10,
+      "amount": "90.00",
+      "reason": "Falta supplier: propuesta excluida del total"
+    },
+    {
+      "item_no": "F600",
+      "description": "Soporte metálico",
+      "location": "SEV",
+      "supplier": "PROV-02",
+      "row": 7,
+      "status": "SIN_COMPRA",
+      "need_qty": 0,
+      "order_qty": 0,
+      "amount": "0.00",
+      "reason": "Disponible y entradas cubren demanda y objetivo"
+    },
+    {
+      "item_no": "G700",
+      "description": "Válvula auxiliar",
+      "location": "",
+      "supplier": "PROV-03",
+      "row": 8,
+      "status": "INCIDENCIA",
+      "need_qty": null,
+      "order_qty": null,
+      "amount": null,
+      "reason": "Falta location"
+    },
+    {
+      "item_no": "H800",
+      "description": "Cartucho de filtrado",
+      "location": "SEV",
+      "supplier": "PROV-01",
+      "row": 9,
+      "status": "INCIDENCIA",
+      "need_qty": null,
+      "order_qty": null,
+      "amount": null,
+      "reason": "demand_qty: número ausente o inválido"
+    }
+  ],
+  "execution": "LOCAL_CALCULATION_ONLY",
+  "purchase_orders_created": 0
+}

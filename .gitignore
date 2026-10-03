@@ -1,0 +1,28 @@
+# Local environments and credentials
+.env
+.env.*
+!.env.example
+**/.mcs/
+live-agents/
+practice/
+evidence/tenant/
+.claude/settings.local.json
+*.log
+__pycache__/
+*.pyc
+.DS_Store
+
+# Connected workspaces, credentials and local outputs
+**/settings.mcs.yml
+**/connections.json
+**/.env
+**/.env.*
+!**/.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.code-workspace
+node_modules/
+build/
+.cache/

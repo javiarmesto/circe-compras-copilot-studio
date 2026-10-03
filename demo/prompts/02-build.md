@@ -1,0 +1,4 @@
+Trabaja sobre el workspace real creado con scripts/New-Circe.ps1. Queremos Circe en GitHub Copilot harness, para explicar la política y calcular reposición de inventario ficticio.
+Usa demo/agent/instructions.md. Conserva las reglas y el cálculo de demo/skills/circe-reposicion. Reutiliza la skill y los datos existentes, no reimplementes la aritmética con el modelo.
+Usa las capacidades documentadas del plugin CAT instalado para proponer el cambio en los archivos reales. Muestra el diff y ejecuta las pruebas locales. No inventes un YAML independiente si PAC ha generado otra estructura. Señala cualquier capacidad no soportada.
+Cuando el entorno de demo esté identificado y el cambio revisado, aplica la sincronización acordada. Si la importación de la skill requiere el portal, indícalo con el paquete exacto. No publiques a canales ni cambies autenticación como efecto lateral.

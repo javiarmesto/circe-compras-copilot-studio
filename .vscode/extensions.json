@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "ms-CopilotStudio.vscode-copilotstudio",
+    "github.copilot-chat",
+    "anthropic.claude-code",
+    "ms-python.python"
+  ]
+}

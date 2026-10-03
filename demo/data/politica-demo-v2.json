@@ -1,0 +1,7 @@
+{
+  "policy_id": "CIRCE-DEMO-01",
+  "version": "2.0",
+  "currency": "EUR",
+  "review_threshold": "1000.00",
+  "fictional": true
+}

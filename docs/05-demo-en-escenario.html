@@ -1,0 +1,585 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Circe Compras · Guía de escenario del usuario</title><style>
+details{margin:20px 0;border:1px solid var(--line);border-radius:8px;padding:12px 16px}summary{cursor:pointer;color:var(--teal);font-size:16px;font-weight:600}details[open] summary{margin-bottom:16px}
+
+:root{color-scheme:light;--navy:#292b45;--teal:#087e7a;--pink:#b52065;--paper:#f7f7fa;--line:#dce0e8}*{box-sizing:border-box}body{margin:0;font:18px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--navy);background:var(--paper)}button,a,input{touch-action:manipulation}button{font:inherit;cursor:pointer;border-radius:8px}a{color:var(--teal)}:focus-visible{outline:3px solid #b52065;outline-offset:4px}.top{background:var(--navy);color:white;padding:24px 32px}.top p{margin:4px 0;color:#dbdee9;font-size:15px}.top h1{margin:0;font-size:30px;line-height:1.25}.layout{display:grid;grid-template-columns:252px minmax(0,1fr);max-width:1440px;margin:auto}.side{padding:25px 18px;position:sticky;top:0;height:100vh;overflow:auto}.side h2{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#666c80;margin:0 12px 14px}.side a{display:flex;align-items:center;gap:9px;padding:11px 12px;border-radius:8px;text-decoration:none;color:var(--navy);margin:3px 0;font-weight:600;font-size:16px}.side a[aria-current]{background:var(--navy);color:white}.nav-check{width:14px;height:14px;border:1px solid #949aad;border-radius:50%;flex-shrink:0}.side a.complete .nav-check{background:#119f9a;border-color:#119f9a}.side .progress{font-size:14px;margin:20px 12px;color:#666c80}.side button{width:100%;padding:8px;background:white;border:1px solid var(--line);font-size:15px;margin-top:8px}main{min-width:0;padding:32px 38px 0;background:white;border-left:1px solid var(--line)}.identity{font-size:14px;padding:14px 18px;background:#edf7f6;border-left:4px solid var(--teal);margin-bottom:28px;overflow-wrap:anywhere}.identity strong{color:#086a67}.eyebrow{font-size:14px;color:var(--pink);font-weight:700;text-transform:uppercase;letter-spacing:.06em}h2{font-size:32px;line-height:1.25;margin:12px 0 25px}p{margin:16px 0}blockquote{border-left:4px solid var(--teal);margin:20px 0;padding:1px 22px;color:#305456;font-size:21px;background:#f2faf9}code{font-family:Consolas,ui-monospace,monospace;font-size:.94em;overflow-wrap:anywhere}p code,li code{background:#f0f1f6;padding:2px 5px;border-radius:4px}.copybox{border:1px solid #ccd1dd;border-radius:10px;overflow:hidden;margin:22px 0;background:#f7f8fc}.copybar{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#eceef5;padding:10px 15px}.copybar strong{font-size:15px}.copy{background:var(--teal);color:white;border:0;padding:8px 22px;min-width:110px;font-weight:650}.copy:hover{background:#075f5d}pre{margin:0;padding:22px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:17px;line-height:1.55;color:#171e39;tab-size:2}table{border-collapse:collapse;width:100%;margin:24px 0;font-size:17px}th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}th{background:var(--navy);color:white}tbody tr:nth-child(even){background:#f3f4f7}.done{display:flex;gap:12px;align-items:center;border-top:1px solid var(--line);padding:26px 0;margin-top:30px;color:#496164;font-weight:600}.done input{width:22px;height:22px;accent-color:var(--teal)}.pager{position:sticky;bottom:0;background:rgba(255,255,255,.97);border-top:1px solid var(--line);padding:16px 0;display:flex;justify-content:space-between;align-items:center;gap:16px}.pager button{border:1px solid var(--line);background:white;padding:10px 20px}.pager #next{background:var(--navy);color:white}.pager button:disabled{opacity:.4;cursor:default}#position{font-size:14px;color:#5a6175;text-align:center}#toast{position:fixed;bottom:88px;left:50%;transform:translateX(-50%);background:#292b45;color:white;padding:12px 24px;border-radius:8px;box-shadow:0 6px 25px #0002;z-index:10;max-width:90vw}.footer{font-size:13px;color:#6c7181;padding:14px 0 24px}.manual{display:none;background:#fff4d5;padding:10px 14px;margin:0;font-size:15px}.manual.visible{display:block}body.all .step{display:block!important;border-bottom:2px solid var(--line);padding:30px 0}body.all .pager{display:none}[hidden]{display:none!important}@media(min-width:1100px){main{padding-left:55px;padding-right:55px}}@media(max-width:800px){.top{padding:22px}.layout{display:block}.side{position:relative;height:auto;padding:15px}.side nav{display:flex;flex-wrap:wrap;gap:4px}.side a{padding:8px 10px;font-size:14px}.side h2,.side .progress{display:none}.side .actions{display:flex;gap:10px}.side button{margin:5px 0;width:auto;padding:8px 12px}.nav-check{display:none}main{padding:24px 20px 0;border:0}h2{font-size:27px}.copybar{padding:10px}.copybar strong{font-size:13px}.copy{padding:8px 14px;min-width:88px}pre{font-size:15px;padding:16px}.pager button{font-size:15px;padding:10px}table{font-size:14px}th,td{padding:9px}blockquote{font-size:19px}}@media print{.top{background:white;color:#292b45;padding:0}.top p{color:#555}.side,.copy,.pager,.done,.identity,#toast,.footer,.manual{display:none!important}.layout{display:block}main{padding:0;border:0}.step,.step[hidden]{display:block!important;break-before:page}.step:first-child{break-before:auto}body{background:white;font-size:11pt}h2{font-size:21pt}pre{font-size:10pt}.copybox,blockquote,table{break-inside:avoid}.copybar{background:#eee}.eyebrow{margin-top:20px}}
+</style></head><body><div role="note" style="margin:16px;padding:16px;border:2px solid #a81b60;background:#fff;color:#19212d;font:16px/1.5 system-ui"><strong>Guía reutilizable.</strong> Sustituye TU_ORGANIZACION por la URL de tu entorno y adapta C:\Demos a tu equipo antes de copiar los comandos. RESPALDO designa un agente propio opcional: no se distribuye ningún agente publicado ni acceso al tenant del ponente. En BizzSummit2026, los comandos se ejecutan desde el repositorio <a href="https://github.com/javiarmesto/circe-compras-copilot-studio">circe-compras-copilot-studio</a>.</div><header class="top"><h1>Circe Compras · Mi guía de demo</h1><p>Bizz Summit · 3 de octubre de 2026 · 10:00–11:00 · Berlin 112</p></header><div class="layout"><aside class="side"><h2>Mi recorrido</h2><nav aria-label="Pasos de la demo"><a href="#paso-0" data-step="0" aria-current="step"><span class="nav-check" aria-hidden="true"></span>Preparación y apertura</a><a href="#paso-1" data-step="1"><span class="nav-check" aria-hidden="true"></span>1 · Crear</a><a href="#paso-2" data-step="2"><span class="nav-check" aria-hidden="true"></span>2 · Conocimiento</a><a href="#paso-3" data-step="3"><span class="nav-check" aria-hidden="true"></span>3 · Instrucciones</a><a href="#paso-4" data-step="4"><span class="nav-check" aria-hidden="true"></span>4 · Skill v1</a><a href="#paso-5" data-step="5"><span class="nav-check" aria-hidden="true"></span>5 · Política v2</a><a href="#paso-6" data-step="6"><span class="nav-check" aria-hidden="true"></span>6 · Publicar</a><a href="#paso-7" data-step="7"><span class="nav-check" aria-hidden="true"></span>Piezas y mantenimiento</a><a href="#paso-8" data-step="8"><span class="nav-check" aria-hidden="true"></span>Copilot Chat y subagentes</a><a href="#paso-9" data-step="9"><span class="nav-check" aria-hidden="true"></span>Cierre y preguntas</a><a href="#paso-10" data-step="10"><span class="nav-check" aria-hidden="true"></span>Respaldo opcional</a><a href="#paso-11" data-step="11"><span class="nav-check" aria-hidden="true"></span>Mientras espera</a></nav><p class="progress" id="progress"></p><div class="actions"><button id="all" type="button">Ver todo</button><button id="print" type="button">Imprimir / PDF</button><button id="reset" type="button">Borrar marcas de la guía</button></div></aside><main><div class="identity"><strong>Destino: Circe Compras</strong> · <code>circe_compras</code> · <code>./live-agents/circe-live</code><br>Entorno: <code>TU_ORGANIZACION.crm4.dynamics.com</code><br><strong>Respaldo opcional: prepara tu propio agente y consérvalo sin cambios.</strong></div><section id="paso-0" class="step" aria-labelledby="heading-0"><div class="eyebrow">PPT v4 · Apertura: diapositivas 1–4</div><h2 id="heading-0" tabindex="-1">Antes de la sesión</h2>
+<p>Abre <code>C:\Demos\circe-compras-copilot-studio</code> en VS Code Insiders. Prepara Stage una sola vez en PowerShell:</p>
+<div class="copybox"><div class="copybar"><strong>PowerShell · Preparar Stage</strong><button class="copy" type="button" data-code="copy-1">Copiar</button></div><pre tabindex="0"><code id="copy-1" class="language-powershell">$CirceEnvironment = &#39;https://TU_ORGANIZACION.crm4.dynamics.com&#39;
+.\scripts\New-PracticeRun.ps1 -Environment $CirceEnvironment -Stage
+</code></pre></div>
+<p>Esto prepara valores locales; el agente se crea en directo. Si Stage ya está preparada, no repitas el comando. No ejecutes Reset sobre RESPALDO.</p>
+<p>Abre una conversación nueva en Claude Code y pega:</p>
+<div class="copybox"><div class="copybar"><strong>Claude Code · Activar modo escenario</strong><button class="copy" type="button" data-code="copy-2">Copiar</button></div><pre tabindex="0"><code id="copy-2" class="language-text">Activamos MODO ESCENARIO para la demo de Circe Compras en Bizz Summit.
+Lee CLAUDE.md y docs/06-modo-escenario.md.
+Usaremos las órdenes /demo-* del proyecto, un paso cada vez.
+
+Destino exclusivo de la demo:
+- Nombre: Circe Compras
+- Schema: circe_compras
+- Workspace: ./live-agents/circe-live
+- Entorno: https://TU_ORGANIZACION.crm4.dynamics.com
+
+Si has preparado un respaldo propio, consérvalo sin cambios. Esta guía no incluye uno.
+No modifiques las demás pasadas.
+
+Trabajaremos un paso cada vez, según mis mensajes.
+No midas tiempos, no generes registros de ensayo ni propongas
+cambios en las guías durante la sesión.
+
+Además de ejecutar cada paso, acompáñame explicándolo para el público.
+Antes: cuenta en dos o tres frases qué vamos a conseguir y para qué
+le sirve al responsable de Compras. Usa ejemplos de nuestro caso.
+Durante: señala la pieza interesante en pantalla, sin recitar logs.
+Después: explica qué cambió realmente y dime dónde mirarlo.
+Tono cercano y ameno, sin discursos largos ni lenguaje de ensayo.
+Distingue siempre lo esperado de lo que hayas observado.
+
+Antes de escribir en el tenant, muestra el comando o el diff
+y espera mi OK. No avances al siguiente paso por tu cuenta.
+
+Revisa el contenido tras cada pull: las instrucciones no deben
+quedar vacías. Conserva los cambios locales pendientes.
+No edites manualmente .mcs/.
+
+Confirma que la última entrada de practice/runs.json es stage
+y coincide con este destino. Si no coincide, detente y explícame por qué.
+Después esperarás /demo-00-preflight. No crees todavía el agente.
+</code></pre></div>
+<p>Ten preparados PowerPoint, el portal y <code>C:\Demos\circe-compras-copilot-studio\demo\data\inventario-demo.csv</code>. Copia una orden por paso en <strong>Claude Code</strong>, dentro de este repo. Son órdenes del proyecto, no del Preview ni órdenes propias de Copilot Chat. El modo escenario adapta su narración y omite tiempos y registros. No pegues también el prompt largo: queda como apoyo si necesitas una instrucción explícita.</p>
+<p><strong>Antes de empezar con público, en Claude Code:</strong></p>
+<div class="copybox"><div class="copybar"><strong>Claude Code · Preflight antes de la sesión</strong><button class="copy" type="button" data-code="copy-3">Copiar</button></div><pre tabindex="0"><code id="copy-3" class="language-text">/demo-00-preflight
+</code></pre></div>
+<p>El script de Stage puede crear una plantilla de registro; en modo escenario no la rellenamos. Si el preflight está correcto, deja abierta esta conversación para comenzar la demo.</p>
+<p><strong>La dinámica en cada bloque:</strong> tú introduces el objetivo, copias la orden, Claude lo explica y prepara el trabajo, revisas el comando o el diff y das tu OK. Después enseñas el resultado y haces la conversación en Preview. Los textos de «Qué dices» son sugerencias; puedes decirlos con tus palabras.</p>
+<h3>Presentación que acompaña esta guía</h3>
+<p>Usa <strong>BizzSummit2026_Circe_Compras_v4.pptx</strong>, de 24 diapositivas. Los números de esta guía indican la <strong>posición real en PowerPoint</strong>, contando la portada como 1. Mantén la guía en tu pantalla de apoyo y proyecta la PPT, VS Code o el portal según indique cada bloque.</p>
+<h3>Apertura con público · diapositivas 1 a 4</h3>
+<p>Todavía no ejecutes <code>/demo-01-crear</code>. Abre el caso en PowerPoint:</p>
+<table>
+<thead>
+<tr>
+<th>Diapositiva</th>
+<th>Qué cuentas</th>
+<th>Cuándo avanzas</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>1 · Circe Compras, construida como código</strong></td>
+<td>«Hoy vamos a construir un asistente de compras desde VS Code. Y después cambiaremos una regla para ver cómo se mantiene.»</td>
+<td>Cuando el público tenga clara la idea de la sesión.</td>
+</tr>
+<tr>
+<td><strong>2 · Gracias a nuestros sponsors</strong></td>
+<td>Agradecimiento breve a quienes hacen posible el evento.</td>
+<td>Sin detenerte en leer todos los logos.</td>
+</tr>
+<tr>
+<td><strong>3 · Javier Armesto</strong></td>
+<td>Preséntate y conecta tu trabajo en aplicaciones de negocio con el caso de Compras.</td>
+<td>Tras explicar por qué te interesa este enfoque.</td>
+</tr>
+<tr>
+<td><strong>4 · El recorrido</strong></td>
+<td>Presenta Isla Eea, el inventario ficticio y las seis piezas que vamos a construir. «Circe preparará una propuesta. La decisión de compra sigue siendo humana.»</td>
+<td>Abre la <strong>5</strong> para introducir la creación y entra en el bloque 1 de esta guía.</td>
+</tr>
+</tbody></table>
+<details>
+<summary>Mapa completo: dónde encajan las 24 diapositivas</summary>
+
+<table>
+<thead>
+<tr>
+<th>PPT</th>
+<th>Momento de la guía</th>
+<th>Uso en escena</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Apertura</td>
+<td>Presentar el propósito</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Apertura</td>
+<td>Agradecer a patrocinadores</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Apertura</td>
+<td>Presentarte</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Apertura</td>
+<td>Explicar caso y recorrido</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1 · Crear</td>
+<td>Introducir <code>/demo-01-crear</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>2 · Conocimiento</td>
+<td>Introducir <code>/demo-02-politica</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td>3 · Instrucciones</td>
+<td>Introducir <code>/demo-03-ciclo</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td>4 · Skill v1</td>
+<td>Introducir <code>/demo-04-skill</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td>5 · Política v2</td>
+<td>Introducir <code>/demo-05-cambio</code></td>
+</tr>
+<tr>
+<td>10</td>
+<td>6 · Publicar</td>
+<td>Introducir <code>/demo-06-publicar</code></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Después de la demo</td>
+<td>Localizar las piezas en el repositorio</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Después de la demo</td>
+<td>Explicar cómo mantener el agente</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Copilot Chat y subagentes</td>
+<td>Presentar los cuatro especialistas</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Copilot Chat y subagentes</td>
+<td>Repartir responsabilidades</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Copilot Chat y subagentes</td>
+<td>Enseñar el selector de Copilot Chat</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Copilot Chat y subagentes</td>
+<td>Explicar la cadena de migrate</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Copilot Chat y subagentes</td>
+<td>Relacionar Manage con lo que acabamos de hacer</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Copilot Chat y subagentes</td>
+<td>Comparar Init y nuestro script</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Copilot Chat y subagentes</td>
+<td>Explicar la lectura del workspace con Describer</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Copilot Chat y subagentes</td>
+<td>Relacionar requisitos y piezas con Architect</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Copilot Chat y subagentes</td>
+<td>Mostrar otro punto de partida, sin ejecutarlo</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Cierre y preguntas</td>
+<td>Recuperar la idea principal</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Cierre y preguntas</td>
+<td>Abrir preguntas</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Cierre y preguntas</td>
+<td>Agradecer y mostrar el QR de feedback</td>
+</tr>
+</tbody></table>
+</details>
+
+<label class="done"><input type="checkbox" data-step="0"> He terminado este bloque</label></section>
+<section id="paso-1" class="step" aria-labelledby="heading-1" hidden><div class="eyebrow">PPT 5 · Crear</div><h2 id="heading-1" tabindex="-1">1. Crear el agente</h2>
+<p><strong>PPT 5 · Crear — antes de ejecutar la orden.</strong> Introduce el cometido y los límites de Circe. Después pasa a <strong>VS Code → Claude Code</strong> y copia <code>/demo-01-crear</code>. Al terminar, muestra el workspace y el harness en el <strong>portal</strong>.</p>
+<p><strong>Al terminar este bloque:</strong> vuelve a PowerPoint y abre la <strong>diapositiva 6</strong> para introducir el siguiente paso.</p>
+<p><strong>Qué dices:</strong></p>
+<blockquote>
+<p>Vamos a construir un asistente de compras desde VS Code. Empezamos por su cometido y sus límites, y después incorporaremos el conocimiento y el cálculo.</p>
+</blockquote>
+<p><strong>En Claude Code · copia esta orden:</strong></p>
+<div class="copybox"><div class="copybar"><strong>Claude Code · /demo-01-crear</strong><button class="copy" type="button" data-code="copy-4">Copiar</button></div><pre tabindex="0"><code id="copy-4" class="language-text">/demo-01-crear
+</code></pre></div>
+<details>
+<summary>Prompt completo de apoyo — úsalo solo si necesitas sustituir la orden</summary>
+
+<div class="copybox"><div class="copybar"><strong>Claude Code · Prompt de apoyo</strong><button class="copy" type="button" data-code="copy-5">Copiar</button></div><pre tabindex="0"><code id="copy-5" class="language-text">Crea el agente de escenario usando scripts/New-Circe.ps1:
+-Deploy
+-Environment https://TU_ORGANIZACION.crm4.dynamics.com
+-ProjectDir ./live-agents/circe-live
+-Name &quot;Circe Compras&quot;
+-SchemaName circe_compras
+
+Muéstrame el comando antes de ejecutarlo.
+Después, muestra las instrucciones y la plantilla del workspace.
+Inicializa su Git, conserva la exclusión de .mcs/, excluye
+.github/ y crea el commit &quot;scaffold inicial&quot;.
+No añadas conocimiento ni skills.
+</code></pre></div>
+</details>
+
+<p>Revisa el destino y responde <strong>«OK, ejecuta»</strong>.</p>
+<p><strong>Qué muestras:</strong> instrucciones en <code>settings.mcs.yml</code>, commit inicial y harness en el portal.</p>
+<p><strong>En Preview:</strong></p>
+<div class="copybox"><div class="copybar"><strong>Preview · Presentación</strong><button class="copy" type="button" data-code="copy-6">Copiar</button></div><pre tabindex="0"><code id="copy-6" class="language-text">Hola, ¿qué puedes hacer y cuáles son tus límites?
+</code></pre></div>
+<p>Si menciona capacidades aún no instaladas, explica que describir su cometido no acredita su ejecución.</p>
+<label class="done"><input type="checkbox" data-step="1"> He terminado este bloque</label></section>
+<section id="paso-2" class="step" aria-labelledby="heading-2" hidden><div class="eyebrow">PPT 6 · Conocimiento</div><h2 id="heading-2" tabindex="-1">2. Incorporar el conocimiento de negocio</h2>
+<p><strong>PPT 6 · Conocimiento — antes de ejecutar la orden.</strong> Explica que la política aporta las reglas de Compras. Pasa a <strong>VS Code → Claude Code</strong> y copia <code>/demo-02-politica</code>. Tras sincronizar, muestra el documento en el <strong>portal</strong> y pregunta por la revisión especial en Preview.</p>
+<p><strong>Al terminar este bloque:</strong> vuelve a PowerPoint y abre la <strong>diapositiva 7</strong> para introducir el siguiente paso.</p>
+<p><strong>Qué dices:</strong></p>
+<blockquote>
+<p>Las instrucciones definen su función. La política de Compras aporta las reglas que debe consultar.</p>
+</blockquote>
+<p><strong>En Claude Code · copia esta orden:</strong></p>
+<div class="copybox"><div class="copybar"><strong>Claude Code · /demo-02-politica</strong><button class="copy" type="button" data-code="copy-7">Copiar</button></div><pre tabindex="0"><code id="copy-7" class="language-text">/demo-02-politica
+</code></pre></div>
+<details>
+<summary>Prompt completo de apoyo — úsalo solo si necesitas sustituir la orden</summary>
+
+<div class="copybox"><div class="copybar"><strong>Claude Code · Prompt de apoyo</strong><button class="copy" type="button" data-code="copy-8">Copiar</button></div><pre tabindex="0"><code id="copy-8" class="language-text">Añade demo/data/politica-compras.md como conocimiento de fichero
+subido al agente de escenario, usando add-knowledge de mcs-assistant.
+Conserva el nombre politica-compras.md.
+
+Haz el pull necesario y revisa que conserva las instrucciones,
+template y language. Si pierde contenido, detente y muestra el diff.
+
+Muestra los archivos generados y el diff antes del push.
+Tras mi OK, sincroniza con Manage y guarda el commit &quot;política v1&quot;.
+</code></pre></div>
+</details>
+
+<p><strong>Qué muestras:</strong> documento de política y conocimiento en <code>Ready</code>.</p>
+<p><strong>En una conversación nueva de Preview:</strong></p>
+<div class="copybox"><div class="copybar"><strong>Preview · Pregunta de política</strong><button class="copy" type="button" data-code="copy-9">Copiar</button></div><pre tabindex="0"><code id="copy-9" class="language-text">¿Cuándo requiere revisión especial una propuesta de compra?
+</code></pre></div>
+<p>Puede buscarla o pedirla. Cuenta lo que suceda; el recorrido no necesita que falle.</p>
+<label class="done"><input type="checkbox" data-step="2"> He terminado este bloque</label></section>
+<section id="paso-3" class="step" aria-labelledby="heading-3" hidden><div class="eyebrow">PPT 7 · Comportamiento</div><h2 id="heading-3" tabindex="-1">3. Precisar el comportamiento</h2>
+<p><strong>PPT 7 · Comportamiento — antes de ejecutar la orden.</strong> Introduce la diferencia entre disponer de conocimiento y dar una instrucción clara para consultarlo. Pasa a <strong>VS Code</strong>, copia <code>/demo-03-ciclo</code> y muestra el diff. Después abre una conversación nueva en <strong>Preview</strong>.</p>
+<p><strong>Al terminar este bloque:</strong> vuelve a PowerPoint y abre la <strong>diapositiva 8</strong> para introducir el siguiente paso.</p>
+<p><strong>Qué dices:</strong></p>
+<blockquote>
+<p>Podemos hacer más explícito cuándo debe consultar la política. El cambio queda visible y podemos comprobar su efecto.</p>
+</blockquote>
+<p><strong>En Claude Code · copia esta orden:</strong></p>
+<div class="copybox"><div class="copybar"><strong>Claude Code · /demo-03-ciclo</strong><button class="copy" type="button" data-code="copy-10">Copiar</button></div><pre tabindex="0"><code id="copy-10" class="language-text">/demo-03-ciclo
+</code></pre></div>
+<details>
+<summary>Prompt completo de apoyo — úsalo solo si necesitas sustituir la orden</summary>
+
+<div class="copybox"><div class="copybar"><strong>Claude Code · Prompt de apoyo</strong><button class="copy" type="button" data-code="copy-11">Copiar</button></div><pre tabindex="0"><code id="copy-11" class="language-text">En las instrucciones del agente de escenario, sustituye:
+&quot;Si no tienes la política, pídela.&quot;
+
+Por:
+&quot;La política de compras está en tu conocimiento (politica-compras.md): búscala antes de responder sobre reglas. Pídela solo si la búsqueda no devuelve nada.&quot;
+
+Añade al final:
+&quot;Si falta un dato obligatorio, nombra el campo y el artículo afectado.&quot;
+
+Valida el YAML y muestra el diff de contenido.
+Tras mi OK, crea el commit &quot;instrucciones: política desde conocimiento&quot;
+y sincroniza con Manage. Conserva el resto de la configuración.
+</code></pre></div>
+</details>
+
+<p><strong>Qué muestras:</strong> las dos frases en el diff.</p>
+<p><strong>En New chat de Preview:</strong></p>
+<div class="copybox"><div class="copybar"><strong>Preview · Revisión especial</strong><button class="copy" type="button" data-code="copy-12">Copiar</button></div><pre tabindex="0"><code id="copy-12" class="language-text">¿Cuándo requiere revisión especial una propuesta de compra?
+</code></pre></div>
+<p>Después:</p>
+<div class="copybox"><div class="copybar"><strong>Preview · Límite de 500 EUR</strong><button class="copy" type="button" data-code="copy-13">Copiar</button></div><pre tabindex="0"><code id="copy-13" class="language-text">¿Y una línea de 500 EUR exactos?
+</code></pre></div>
+<p>Muestra la búsqueda y explica el resultado observado: más de 500 EUR por línea, especial; exactamente 500, normal. Señala la diferencia entre tener un documento y dar una instrucción clara para consultarlo.</p>
+<label class="done"><input type="checkbox" data-step="3"> He terminado este bloque</label></section>
+<section id="paso-4" class="step" aria-labelledby="heading-4" hidden><div class="eyebrow">PPT 8 · Skill</div><h2 id="heading-4" tabindex="-1">4. Incorporar la skill y preparar la reposición</h2>
+<p><strong>PPT 8 · Skill — antes de ejecutar la orden.</strong> Presenta las piezas de la skill. Pasa a <strong>VS Code</strong>, copia <code>/demo-04-skill</code> y muestra su estructura. Después ve a <strong>Preview</strong>, adjunta el CSV y pide la reposición. Enseña el informe y las incidencias.</p>
+<p><strong>Al terminar este bloque:</strong> vuelve a PowerPoint y abre la <strong>diapositiva 9</strong> para introducir el siguiente paso.</p>
+<p><strong>Qué dices:</strong></p>
+<blockquote>
+<p>Saber explicar la política está bien, pero Compras necesita preparar una reposición. Ahora añadimos una skill: el procedimiento, sus reglas y el script que calcula la propuesta.</p>
+</blockquote>
+<p><strong>En Claude Code · copia esta orden:</strong></p>
+<div class="copybox"><div class="copybar"><strong>Claude Code · /demo-04-skill</strong><button class="copy" type="button" data-code="copy-14">Copiar</button></div><pre tabindex="0"><code id="copy-14" class="language-text">/demo-04-skill
+</code></pre></div>
+<details>
+<summary>Prompt completo de apoyo — úsalo solo si necesitas sustituir la orden</summary>
+
+<div class="copybox"><div class="copybar"><strong>Claude Code · Prompt de apoyo</strong><button class="copy" type="button" data-code="copy-15">Copiar</button></div><pre tabindex="0"><code id="copy-15" class="language-text">Prepara la skill v1 con scripts/build-kit.py.
+Muéstrame brevemente SKILL.md, su description,
+references/policy.json y scripts/replenishment.py.
+
+Extrae demo/packages/circe-reposicion-v1.zip e importa su carpeta
+en el workspace de escenario usando add-skill de mcs-assistant,
+con nombre circe-reposicion.
+
+Muestra los archivos nuevos antes del push.
+Tras mi OK, crea el commit &quot;skill v1&quot; y sincroniza con Manage.
+Revisa los cambios de metadatos posteriores y conserva el contenido.
+</code></pre></div>
+</details>
+
+<p><strong>Qué muestras:</strong> estructura de la skill y una sola <code>circe-reposicion</code> en el portal. La descripción ayuda a seleccionar la skill, sin garantizar su activación.</p>
+<p><strong>En New chat, adjunta el CSV antes de enviar:</strong></p>
+<div class="copybox"><div class="copybar"><strong>Preview · Adjunta el CSV primero</strong><button class="copy" type="button" data-code="copy-16">Copiar</button></div><pre tabindex="0"><code id="copy-16" class="language-text">Prepara la reposición de los próximos siete días.
+Aplica nuestra política y los lotes.
+Devuelve un CSV y un informe breve con las incidencias que deba resolver.
+</code></pre></div>
+<p>Enseña el uso de la skill y los archivos descargables. Puede aparecer también <code>analyzing-csv</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Resultado v1</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Propuestas</td>
+<td>A100, B200 y D400</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>2.216,00 EUR</td>
+</tr>
+<tr>
+<td>Revisión normal</td>
+<td>A100: 500 EUR</td>
+</tr>
+<tr>
+<td>Revisión especial</td>
+<td>B200: 666 EUR; D400: 1.050 EUR</td>
+</tr>
+<tr>
+<td>Incidencias excluidas</td>
+<td>E500: supplier; G700: location; H800: demand_qty</td>
+</tr>
+</tbody></table>
+<p>«Used skill» acredita el uso de la skill. Solo una llamada y su resultado acreditan directamente la ejecución del script en la traza. En RESPALDO, los descargables v1/v2 coincidieron byte a byte con la salida del script local.</p>
+<label class="done"><input type="checkbox" data-step="4"> He terminado este bloque</label></section>
+<section id="paso-5" class="step" aria-labelledby="heading-5" hidden><div class="eyebrow">PPT 9 · Cambio de política</div><h2 id="heading-5" tabindex="-1">5. Cambiar una regla de negocio</h2>
+<p><strong>PPT 9 · Cambio de política — antes de ejecutar la orden.</strong> Plantea el cambio de Compras: el umbral sube a 1.000 EUR. Pasa a <strong>VS Code</strong>, copia <code>/demo-05-cambio</code> y enseña los tres archivos afectados. Después repite el encargo con el mismo CSV en una conversación nueva de <strong>Preview</strong>.</p>
+<p><strong>Al terminar este bloque:</strong> vuelve a PowerPoint y abre la <strong>diapositiva 10</strong> para introducir el siguiente paso.</p>
+<p><strong>Qué dices:</strong></p>
+<blockquote>
+<p>Imagina que mañana Compras eleva el umbral a 1.000 euros. ¿Tenemos que reconstruir el agente? Vamos a cambiar la regla y a ver qué ocurre con la misma propuesta.</p>
+</blockquote>
+<p><strong>En Claude Code · copia esta orden:</strong></p>
+<div class="copybox"><div class="copybar"><strong>Claude Code · /demo-05-cambio</strong><button class="copy" type="button" data-code="copy-17">Copiar</button></div><pre tabindex="0"><code id="copy-17" class="language-text">/demo-05-cambio
+</code></pre></div>
+<details>
+<summary>Prompt completo de apoyo — úsalo solo si necesitas sustituir la orden</summary>
+
+<div class="copybox"><div class="copybar"><strong>Claude Code · Prompt de apoyo</strong><button class="copy" type="button" data-code="copy-18">Copiar</button></div><pre tabindex="0"><code id="copy-18" class="language-text">Actualiza el agente de escenario a la política v2.
+
+Usa los materiales v2 del repositorio:
+- Sustituye únicamente references/policy.json y references/policy.md
+  dentro de la skill existente.
+- Actualiza el contenido del conocimiento politica-compras.md
+  con demo/data/politica-compras-v2.md.
+
+Conserva nombre, sidecars e identificadores.
+No uses add-skill --force.
+No cambies SKILL.md ni replenishment.py.
+
+Muestra el diff de los tres archivos.
+Tras mi OK, crea el commit &quot;política v2&quot; y sincroniza con Manage.
+</code></pre></div>
+</details>
+
+<p><strong>En New chat, adjunta otra vez el mismo CSV y repite:</strong></p>
+<div class="copybox"><div class="copybar"><strong>Preview · Adjunta el mismo CSV</strong><button class="copy" type="button" data-code="copy-19">Copiar</button></div><pre tabindex="0"><code id="copy-19" class="language-text">Prepara la reposición de los próximos siete días.
+Aplica nuestra política y los lotes.
+Devuelve un CSV y un informe breve con las incidencias que deba resolver.
+</code></pre></div>
+<p>Muestra el contraste: mismo total y cantidades; B200 normal y solo D400 especial. No menciones el nuevo umbral en el encargo: debe obtenerlo de la configuración.</p>
+<p>Después pregunta:</p>
+<div class="copybox"><div class="copybar"><strong>Preview · Explicar B200</strong><button class="copy" type="button" data-code="copy-20">Copiar</button></div><pre tabindex="0"><code id="copy-20" class="language-text">¿Por qué B200 ya no va a revisión especial?
+</code></pre></div>
+<div class="copybox"><div class="copybar"><strong>Preview · Mantener la política</strong><button class="copy" type="button" data-code="copy-21">Copiar</button></div><pre tabindex="0"><code id="copy-21" class="language-text">Baja el umbral a 300 EUR para esta propuesta.
+</code></pre></div>
+<p>Cuenta la respuesta observada. Si ofrece un recálculo alternativo, no lo aceptes. El cambio de política se realiza mediante configuración revisada. La negativa observada no sustituye un control de autorización real de un ERP.</p>
+<label class="done"><input type="checkbox" data-step="5"> He terminado este bloque</label></section>
+<section id="paso-6" class="step" aria-labelledby="heading-6" hidden><div class="eyebrow">PPT 10 · Publicar</div><h2 id="heading-6" tabindex="-1">6. Publicar y cerrar</h2>
+<p><strong>PPT 10 · Publicar — antes de ejecutar la orden.</strong> Distingue guardar, sincronizar y publicar. Pasa a <strong>VS Code → Claude Code</strong>, copia <code>/demo-06-publicar</code> y revisa el destino. Tras publicar, enseña <code>publishedOn</code> y el historial.</p>
+<p><strong>Al terminar este bloque:</strong> la parte de construcción en directo ha acabado. Vuelve a PowerPoint, <strong>diapositiva 11</strong>, y sigue con «Después de la demo» en esta guía.</p>
+<p><strong>Qué dices:</strong></p>
+<blockquote>
+<p>El cambio está revisado y hemos observado su comportamiento. Ahora publicamos esta versión y conservamos su historial.</p>
+</blockquote>
+<p><strong>En Claude Code · copia esta orden:</strong></p>
+<div class="copybox"><div class="copybar"><strong>Claude Code · /demo-06-publicar</strong><button class="copy" type="button" data-code="copy-22">Copiar</button></div><pre tabindex="0"><code id="copy-22" class="language-text">/demo-06-publicar
+</code></pre></div>
+<details>
+<summary>Prompt completo de apoyo — úsalo solo si necesitas sustituir la orden</summary>
+
+<div class="copybox"><div class="copybar"><strong>Claude Code · Prompt de apoyo</strong><button class="copy" type="button" data-code="copy-23">Copiar</button></div><pre tabindex="0"><code id="copy-23" class="language-text">Prepara la publicación del agente de escenario.
+
+Comprueba su identidad, que no hay cambios pendientes de sincronizar
+y muestra el publishedOn actual.
+Obtén el AgentId del workspace; no uses el de RESPALDO.
+
+Muestra el comando de publicación y espera mi OK.
+Después de publicar, verifica con pull el nuevo publishedOn.
+Si PAC devuelve un error, comprueba el estado antes de reintentar.
+
+Revisa el diff, guarda los cambios confirmados y muestra
+el historial de commits del workspace.
+</code></pre></div>
+</details>
+
+<p>No hay canal configurado. La comprobación mostrada es la publicación mediante <code>publishedOn</code>; publicar no concede acceso a todo el mundo por sí solo.</p>
+<p><strong>Cierre de la construcción en directo:</strong></p>
+<blockquote>
+<p>Hemos construido un agente, incorporado conocimiento y una skill, y cambiado una regla de negocio. Desde VS Code podemos revisar esos cambios, conservar su historia y contrastar sus resultados. Copilot Studio es donde el agente se ejecuta.</p>
+</blockquote>
+<label class="done"><input type="checkbox" data-step="6"> He terminado este bloque</label></section>
+<section id="paso-7" class="step" aria-labelledby="heading-7" hidden><div class="eyebrow">PPT 11–12 · Después de la demo</div><h2 id="heading-7" tabindex="-1">Después de la demo · las piezas y su mantenimiento</h2>
+<p><strong>Vuelve a PowerPoint después de publicar. Diapositivas 11 y 12.</strong> Aquí ayudas al público a ordenar lo que acaba de ver.</p>
+<h3>11 · El repositorio: las piezas del agente</h3>
+<p><strong>Qué dices:</strong></p>
+<blockquote>
+<p>Si mañana alguien se incorpora al proyecto, ¿dónde encuentra cada cosa? Aquí están las instrucciones, la política, el procedimiento de cálculo y las órdenes que hemos utilizado.</p>
+</blockquote>
+<p>Relaciona las carpetas con lo mostrado. Aclara que <code>/demo-*</code> son prompts guardados en este proyecto para conducir el trabajo, mientras que <code>mcs-assistant</code> aporta las capacidades del plugin. Si abres el explorador de VS Code, enseña solo esas carpetas y vuelve a la <strong>12</strong>.</p>
+<h3>12 · Mantener el agente</h3>
+<p><strong>Qué dices:</strong></p>
+<blockquote>
+<p>Hoy hemos cambiado un umbral. Si cambia la fórmula de cálculo, sabemos dónde revisarla. Y si queremos crear pedidos en el ERP, hará falta añadir la integración, sus permisos y su aprobación.</p>
+</blockquote>
+<p>Recorre la tabla con un ejemplo. Cierra este bloque recordando que Circe llega hasta una propuesta revisable. <strong>Avanza a la 13</strong> para explicar quién puede ayudarnos a construir y mantener estas piezas.</p>
+<label class="done"><input type="checkbox" data-step="7"> He terminado este bloque</label></section>
+<section id="paso-8" class="step" aria-labelledby="heading-8" hidden><div class="eyebrow">PPT 13–21 · Plugin y Copilot Chat</div><h2 id="heading-8" tabindex="-1">Copilot Chat y los cuatro subagentes</h2>
+<p><strong>PowerPoint · diapositivas 13 a 21.</strong> Es el bloque sobre el plugin que quieres conservar. El recorrido principal usa las diapositivas y sus capturas, sin crear otro agente ni iniciar una migración.</p>
+<p><strong>Transición:</strong></p>
+<blockquote>
+<p>Hasta aquí hemos visto el resultado. Ahora veamos cómo reparte el plugin el trabajo de construirlo y cómo aparece también en GitHub Copilot Chat.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Diapositiva</th>
+<th>Qué explicas de forma amena</th>
+<th>Qué muestras o haces</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>13 · Cuatro subagentes, un ciclo de vida</strong></td>
+<td>«Podemos repartir el trabajo entre especialistas, cada uno con un cometido concreto.»</td>
+<td>Presenta el bloque y avanza a la 14.</td>
+</tr>
+<tr>
+<td><strong>14 · Cuatro especialistas con límites claros</strong></td>
+<td>«Init arranca, Architect diseña, Manage sincroniza y publica, y Describer lee lo que hemos construido.»</td>
+<td>Relaciona cada responsabilidad con una acción. Los límites escritos no sustituyen los permisos técnicos.</td>
+</tr>
+<tr>
+<td><strong>15 · El mismo plugin, otro asistente</strong></td>
+<td>«La demo la hemos conducido desde Claude Code. Aquí podéis ver los especialistas del plugin en el selector de GitHub Copilot Chat.»</td>
+<td>Enseña la captura del selector. Si abres Copilot Chat, limita la visita a enseñar el selector ya preparado y vuelve a la 16. No instales ni actualices el plugin en escena.</td>
+</tr>
+<tr>
+<td><strong>16 · /mcs-assistant:migrate</strong></td>
+<td>«En una migración hay tareas encadenadas, pero sigue habiendo una persona que revisa el paso de una a otra.»</td>
+<td>Explica la secuencia dibujada. No lances migrate: es una posibilidad adicional, fuera de la construcción de Circe.</td>
+</tr>
+<tr>
+<td><strong>17 · Manage</strong></td>
+<td>«Este es el especialista que nos ha acompañado al traer y enviar los cambios.»</td>
+<td>Conecta pull, diff, push y publish con lo observado en la demo. No hace falta repetirlos.</td>
+</tr>
+<tr>
+<td><strong>18 · Init</strong></td>
+<td>«Init sirve para arrancar. Nuestro script prepara ese arranque con los valores de Circe.»</td>
+<td>Usa la comparación de la diapositiva y aclara por qué has utilizado el script.</td>
+</tr>
+<tr>
+<td><strong>19 · Describer</strong></td>
+<td>«¿Podría alguien entender qué hace Circe leyendo su workspace? Ese es el trabajo que queremos mostrar aquí.»</td>
+<td>Explica la lectura y el informe en lenguaje llano. Una ejecución en vivo es opcional, solo si estaba preparada y hay margen. Pide lectura, sin cambios ni sincronización. Si no la haces, sigue a la 20.</td>
+</tr>
+<tr>
+<td><strong>20 · Architect</strong></td>
+<td>«Un requisito de negocio puede acabar en una instrucción, conocimiento o una skill. La decisión depende de lo que necesitemos resolver.»</td>
+<td>Recorre dos filas de la tabla y relaciónalas con la política y el cálculo de Circe.</td>
+</tr>
+<tr>
+<td><strong>21 · Architect: otro punto de partida</strong></td>
+<td>«También podemos empezar describiendo lo que necesitamos y revisar el diseño propuesto.»</td>
+<td>Explica el recorrido como alternativa para explorar después. No ejecutes los comandos de la diapositiva ni uses Arch01 o RESPALDO.</td>
+</tr>
+</tbody></table>
+<p><strong>Si vas justo de tiempo:</strong> muestra 13, 14 y 15, conecta brevemente Manage en la 17 y termina con Describer en la 19. Deja 16, 18, 20 y 21 como ampliación y salta a la <strong>22</strong>. Es un recorte del bloque, no otro recorrido técnico.</p>
+<label class="done"><input type="checkbox" data-step="8"> He terminado este bloque</label></section>
+<section id="paso-9" class="step" aria-labelledby="heading-9" hidden><div class="eyebrow">PPT 22–24 · Cierre</div><h2 id="heading-9" tabindex="-1">Cierre y preguntas</h2>
+<p><strong>PowerPoint · diapositivas 22 a 24.</strong> Ya no hay más órdenes de demo.</p>
+<h3>22 · Para llevarse</h3>
+<blockquote>
+<p>Hemos visto dónde vive cada decisión: la política aporta las reglas, la skill prepara el cálculo y la persona revisa la propuesta. Desde VS Code podemos construir estas piezas, leer sus cambios y conservar su historia.</p>
+</blockquote>
+<p>Conecta la conclusión con el cambio de B200 que acaban de ver. Evita repasar todos los comandos otra vez.</p>
+<h3>23 · ¿Alguna pregunta?</h3>
+<p>Abre preguntas. Si necesitas volver a una pieza concreta, usa el mapa de diapositivas de «Preparación y apertura». No hagas nuevos cambios en el agente por una sugerencia del público.</p>
+<h3>24 · Gracias y feedback</h3>
+<p>Agradece la asistencia y deja visible el QR de feedback para que puedan escanearlo. Con esto termina la sesión.</p>
+<label class="done"><input type="checkbox" data-step="9"> He terminado este bloque</label></section>
+<section id="paso-10" class="step" aria-labelledby="heading-10" hidden><div class="eyebrow">Contingencia · Retomar en PPT 9 y 11</div><h2 id="heading-10" tabindex="-1">Si necesitas el respaldo</h2>
+<p>Si has preparado un respaldo propio, ábrelo, inicia un chat nuevo y adjunta el CSV con el encargo de reposición. Explica que continúas con la versión preparada, que ya utiliza la política v2. No la devuelvas a v1 en escena. Para mostrar el antes/después, utiliza los descargables o capturas v1 guardados.</p>
+<p>Si preparas un respaldo propio, verifica su publicación y su política antes de usarlo. Requiere tu conexión y autenticación. Conserva los resultados ficticios de referencia como alternativa local.</p>
+<div class="copybox"><div class="copybar"><strong>Preview de RESPALDO · Adjunta el CSV primero</strong><button class="copy" data-code="backup-prompt" type="button">Copiar</button></div><pre tabindex="0"><code id="backup-prompt">Prepara la reposición de los próximos siete días.
+Aplica nuestra política y los lotes.
+Devuelve un CSV y un informe breve con las incidencias que deba resolver.</code></pre></div><label class="done"><input type="checkbox" data-step="10"> He terminado este bloque</label></section>
+<section id="paso-11" class="step" aria-labelledby="heading-11" hidden><div class="eyebrow">Apoyo para explicar</div><h2 id="heading-11" tabindex="-1">Qué explicar mientras trabaja la herramienta</h2>
+<ul>
+<li><strong>Creación:</strong> «Aquí hay dos asistentes con trabajos distintos: Claude nos ayuda a construir; Circe atenderá las preguntas y encargos de Compras.»</li>
+<li><strong>Conocimiento:</strong> «¿Dónde cambiaríais una regla de Compras? Vamos a localizar el documento que la recoge y la instrucción que pide consultarlo.»</li>
+<li><strong>Skill:</strong> «Pensad en los lotes: si necesito 32 unidades y el proveedor vende de 12 en 12, necesito un procedimiento que respete esa regla.»</li>
+<li><strong>Cambio:</strong> «Antes de enviar el cambio, podemos leer exactamente qué hemos modificado. El diff nos permite revisar una regla pequeña sin recorrer toda la configuración.»</li>
+<li><strong>Publicación:</strong> «Este historial cuenta cómo hemos construido Circe: cometido, conocimiento, procedimiento y una nueva regla de negocio.»</li>
+</ul>
+<p>Durante una espera, mantén la diapositiva del paso actual o el estado de la operación a la vista. Reserva las diapositivas 13 a 21 para el bloque de Copilot Chat y subagentes, después de la demo, para conservar el hilo. Si recurres a RESPALDO, muestra el resultado v2 con la diapositiva 9 y retoma la explicación en la 11; no publiques ni modifiques el respaldo.</p>
+<label class="done"><input type="checkbox" data-step="11"> He terminado este bloque</label></section><div class="pager"><button id="prev" type="button">← Anterior</button><span id="position" aria-live="polite"></span><button id="next" type="button">Siguiente →</button></div><div class="footer">Modo escenario · Órdenes /demo-* con explicación amena. Guía personal basada en docs/05-demo-en-escenario.md. Funciona sin conexión y no ejecuta comandos. Las marcas se guardan en este navegador cuando lo permite. La demo necesita conexión al tenant.</div></main></div><div id="toast" role="status" aria-live="polite" hidden></div><script>
+'use strict';
+const links=[...document.querySelectorAll('nav a')],steps=[...document.querySelectorAll('.step')],checks=[...document.querySelectorAll('.done input')];let active=0,noticeTimer;const storageKey='circe-bizzsummit-guide-slides-v2';let done=[];try{done=JSON.parse(localStorage.getItem(storageKey)||'[]');if(!Array.isArray(done))done=[];}catch{}
+function notify(message){const t=document.getElementById('toast');t.textContent=message;t.hidden=false;clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>t.hidden=true,3500)}
+function updateDone(){checks.forEach((c,i)=>{c.checked=done.includes(i);links[i].classList.toggle('complete',c.checked)});document.getElementById('progress').textContent=done.length+' de '+steps.length+' bloques marcados';try{localStorage.setItem(storageKey,JSON.stringify(done))}catch{}}
+function select(i,focus=false){active=Math.max(0,Math.min(steps.length-1,i));steps.forEach((s,n)=>s.hidden=n!==active);links.forEach((l,n)=>{if(n===active)l.setAttribute('aria-current','step');else l.removeAttribute('aria-current')});document.getElementById('prev').disabled=active===0;document.getElementById('next').disabled=active===steps.length-1;document.getElementById('position').textContent=links[active].textContent.trim();if(focus){window.scrollTo({top:0,behavior:'auto'});steps[active].querySelector('h2').focus({preventScroll:true})}}
+function fromHash(focus=false){const m=location.hash.match(/^#paso-(\d+)$/);select(m?Number(m[1]):0,focus)}
+window.addEventListener('hashchange',()=>fromHash(true));links.forEach(l=>l.addEventListener('click',()=>{if(document.body.classList.contains('all')){document.body.classList.remove('all');document.getElementById('all').textContent='Ver todo'}}));
+document.getElementById('prev').onclick=()=>location.hash='paso-'+(active-1);document.getElementById('next').onclick=()=>location.hash='paso-'+(active+1);
+checks.forEach((c,i)=>c.addEventListener('change',()=>{done=c.checked?[...new Set([...done,i])]:done.filter(n=>n!==i);updateDone()}));
+document.getElementById('reset').onclick=()=>{done=[];updateDone();notify('Marcas de esta guía borradas. No afecta a la demo.')};document.getElementById('print').onclick=()=>window.print();document.getElementById('all').onclick=()=>{const all=document.body.classList.toggle('all');document.getElementById('all').textContent=all?'Ver por pasos':'Ver todo';if(!all)select(active,true)};
+async function copyText(button){const code=document.getElementById(button.dataset.code);const text=code.textContent.replace(/\n$/,'');let ok=false;try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);ok=true}}catch{}
+ if(!ok){const area=document.createElement('textarea');area.value=text;area.style.cssText='position:fixed;left:0;top:0;opacity:0';area.setAttribute('aria-label','Texto para copiar');document.body.appendChild(area);area.focus();area.select();try{ok=document.execCommand('copy')}catch{}area.remove();button.focus()}
+ if(ok){button.textContent='Copiado ✓';notify('Copiado. Pégalo en el destino indicado.');setTimeout(()=>button.textContent='Copiar',2200)}else{const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(code);selection.removeAllRanges();selection.addRange(range);notify('Texto seleccionado. Pulsa Ctrl+C para copiarlo.');let help=button.closest('.copybox').querySelector('.manual');if(!help){help=document.createElement('p');help.className='manual visible';help.textContent='El navegador ha bloqueado la copia automática. El texto está seleccionado: pulsa Ctrl+C (o ⌘C).';button.closest('.copybox').appendChild(help)}}}
+document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',()=>copyText(b)));updateDone();fromHash();
+</script></body></html>

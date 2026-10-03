@@ -1,0 +1,9 @@
+﻿item_no,description,location,supplier,status,need_qty,order_qty,amount,reason
+A100,Kit de mantenimiento,SEV,PROV-01,REVISION_NORMAL,18,20,500.00,Propuesta pendiente de decisión humana
+B200,Sensor de temperatura,SEV,PROV-02,REVISION_ESPECIAL,32,36,666.00,Propuesta pendiente de decisión humana
+C300,Cable industrial,SEV,PROV-01,SIN_COMPRA,0,0,0.00,Disponible y entradas cubren demanda y objetivo
+D400,Bomba de recambio,SEV,PROV-03,REVISION_ESPECIAL,23,25,1050.00,Propuesta pendiente de decisión humana
+E500,Junta de sellado,SEV,,INCIDENCIA,10,10,90.00,Falta supplier: propuesta excluida del total
+F600,Soporte metálico,SEV,PROV-02,SIN_COMPRA,0,0,0.00,Disponible y entradas cubren demanda y objetivo
+G700,Válvula auxiliar,,PROV-03,INCIDENCIA,,,,Falta location
+H800,Cartucho de filtrado,SEV,PROV-01,INCIDENCIA,,,,demand_qty: número ausente o inválido

@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "copilot-studio-plugin": {
+      "source": {
+        "source": "github",
+        "repo": "microsoft/copilot-studio-plugin"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "mcs-assistant@copilot-studio-plugin": true
+  }
+}
